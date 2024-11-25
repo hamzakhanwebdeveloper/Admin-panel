@@ -4,15 +4,16 @@ import Sidebar from "./Components/Sidebar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import Routes and Route
 
 // Import your page components
-import Home from "./Pages/Home";
 import User from "./Pages/User";
 import Courses from "./Pages/Courses";
 import Data from "./Pages/Data";
 import Calendar from "./Pages/Calendar";
 import Settings from "./Pages/Settings";
+import Home from "./Pages/Home/Home";
 
 function App() {
   return (
+
     <Router>
       <Navbar />
       <div className="flex h-screen">
