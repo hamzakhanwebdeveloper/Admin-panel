@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./component.css";
 
-
 function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
@@ -11,10 +10,10 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="bg-gray-800">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
-            {/* Logo */}
+      <nav className="bg-gray-200">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-between h-16">
+            {/* Logo Section */}
             <div className="flex items-center">
               <img
                 className="h-8 w-auto"
@@ -24,20 +23,42 @@ function Navbar() {
             </div>
 
             {/* Search Bar */}
-            <div className="flex-1 px-4">
+            <div className="hidden lg:flex flex-1 px-4">
               <input
                 type="text"
                 placeholder="Search..."
-                className=" search_bar  w-1/2 rounded-md bg-gray-700 text-gray-200 px-4 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="search_bar w-full lg:w-1/2 rounded-md bg-gray-100 text-gray-800 px-4 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               />
             </div>
 
-            {/* Profile Section */}
+            {/* Profile and Notifications */}
             <div className="flex items-center space-x-4">
+              {/* Search Icon for Small Screens */}
+              <div className="lg:hidden">
+                <button
+                  type="button"
+                  className="p-2 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm10 3-4.35-4.35"
+                    />
+                  </svg>
+                </button>
+              </div>
+
               {/* Notifications */}
               <button
                 type="button"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="relative rounded-full bg-gray-200 p-1 text-gray-800 hover:text-blue-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
               >
                 <span className="sr-only">View notifications</span>
                 <svg
@@ -104,6 +125,15 @@ function Navbar() {
                 )}
               </div>
             </div>
+          </div>
+
+          {/* Mobile Search Bar */}
+          <div className="block lg:hidden mt-2">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full rounded-md bg-gray-100 text-gray-800 px-4 py-2 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            />
           </div>
         </div>
       </nav>

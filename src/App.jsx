@@ -13,13 +13,11 @@ import Home from "./Pages/Home/Home";
 
 function App() {
   return (
-
     <Router>
       <Navbar />
-      <div className="flex h-screen">
-        
+      <div className="flex ">
         <Sidebar />
-        <div className="flex-1 p-8 bg-gray-100">
+        <div className="flex-1 p-8 bg-gray-100 " style={{ height: "100%" }}>
           {/* Replace Switch with Routes and update Route syntax */}
           <Routes>
             <Route path="/" element={<Home />} />
@@ -31,6 +29,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      {/* <Dashborad/> */}
     </Router>
   );
 }

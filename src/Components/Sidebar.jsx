@@ -9,13 +9,13 @@ function Sidebar() {
   };
 
   return (
-    <div className="flex h-screen">
-      <div className={`bg-gray-800 text-white ${isOpen ? "w-64" : "w-16"} transition-all duration-300`}>
+    <div className=" ">
+      <div className={`bg-gray-200 text-bl ${isOpen ? "w-37" : "w-16"} transition-all duration-300`}>
         <div className="flex items-center justify-between p-4">
           <h1 className={`text-xl font-bold transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
             Dashboard
           </h1>
-          <button onClick={toggleSidebar} className="text-white p-2">
+          <button onClick={toggleSidebar} className="text-bl p-2">
             {isOpen ? "<<" : ">>"}
           </button>
         </div>
@@ -23,9 +23,7 @@ function Sidebar() {
           {/* Sidebar Links */}
           <SidebarItem icon="fas fa-home" label="Home" path="/" isOpen={isOpen} />
           <SidebarItem icon="fas fa-users" label="Users" path="/users" isOpen={isOpen} />
-          <SidebarItem icon="fas fa-book" label="Courses" path="/courses" isOpen={isOpen} />
           <SidebarItem icon="fas fa-database" label="Data" path="/data" isOpen={isOpen} />
-          <SidebarItem icon="fas fa-calendar-alt" label="Calendar" path="/calendar" isOpen={isOpen} />
           <SidebarItem icon="fas fa-cogs" label="Settings" path="/settings" isOpen={isOpen} />
         </div>
       </div>
@@ -35,7 +33,7 @@ function Sidebar() {
 
 const SidebarItem = ({ icon, label, path, isOpen }) => {
   return (
-    <Link to={path} className="flex items-center space-x-4 px-4 py-3 hover:bg-gray-700 rounded-lg cursor-pointer">
+    <Link to={path} className="flex items-center space-x-4 px-4 py-3 hover:bg-gray-200 rounded-lg cursor-pointer">
       <i className={`${icon} text-xl`}></i> {/* Font Awesome Icon */}
       {isOpen && <span className="text-lg">{label}</span>}
     </Link>
